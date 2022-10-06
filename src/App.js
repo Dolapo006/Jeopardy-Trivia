@@ -4,7 +4,7 @@ import Question from "./components/Question";
 import Rules from "./components/Rules";
 import LeaderBoard from "./components/LeaderBoard";
 import ConfettiGenerator from "confetti-js";
-import { Redirect, BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export default function App() {
   const [keyedAnswer, setKeyedAnswer] = useState("");
@@ -14,13 +14,13 @@ export default function App() {
   const [displayQ, setDisplayQ] = useState("");
   const [redir, setRedir] = useState(false);
   const [inc, setInc] = useState(null);
-  const url = `https://jservice.io/api/random?count=100`;
+  const url = `https://jservice.io/api/random?count=50`;
   const skip = document.getElementById("skip");
   const go = document.getElementById("go");
 
   console.log(displayQ);
 
-  //The confetti
+  // Confetti from confetti js
   const handleConf = () => {
     const confettiSettings = {
       target: "my-canvas",
@@ -48,7 +48,7 @@ export default function App() {
     return () => confetti.clear();
   };
 
-  // The Fetch Hook
+
   useEffect(() => {
     let unmounted = false;
     fetch(url)
@@ -58,19 +58,20 @@ export default function App() {
     return () => (unmounted = true);
   }, []);
 
+
   const handleInput = (e) => {
     e.preventDefault();
     setKeyedAnswer(e.target.value);
   };
 
-  
+ 
   const redirWin = () => {
     setInterval(() => {
       setRedir(true);
     }, 3000);
   };
 
-  
+ //CORRECT ANSWERS
   const correct = () => {
     setCount((count) => [...count, "dot"]);
     console.log("correct");
@@ -80,21 +81,19 @@ export default function App() {
       ? console.log("YOU WON!") || skip.remove() || go.remove() || redirWin()
       : setInc(false) || console.log("10 to win") || handleNext();
   };
-
-  //INcorrect ANswers
+//INCORRECT ANSWERS
   const removeDot = () => {
     setCount((count) => []);
     console.log("incorrect");
     setInc(true);
   };
-
-  //All the questions
+//ALL THE ANSWERS
   const handleLoad = () => {
     console.log("GO!");
     setDisplayQ(questions[index]);
   };
 
-  
+ 
   const handleNext = () => {
     setIndex((index) => (index < 49 ? index + 1 : (index = 0)));
     setDisplayQ(questions[index]);
@@ -104,11 +103,11 @@ export default function App() {
     <div className="App">
       <canvas id="my-canvas"></canvas>
       <BrowserRouter>
-       
-          <Route exact path="/leaderboard">
+        <Routes>
+          <Route path="/leaderboard" element={<LeaderBoard />}>
             <LeaderBoard />
           </Route>
-          <Route exact path="/questions">
+          <Route path="/questions" element={<Question />}>
             <Question
               inc={inc}
               redir={redir}
@@ -124,8 +123,8 @@ export default function App() {
           <Route exact path="/">
             <Rules handleLoad={handleLoad} handleNext={handleNext} />
           </Route>
-          
-       
+          <Route to="/" />
+        </Routes>
       </BrowserRouter>
     </div>
   );

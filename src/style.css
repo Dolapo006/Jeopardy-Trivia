@@ -1,0 +1,140 @@
+
+body {
+    background-color: black;
+  }
+  h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 60px;
+    color: #2ec0f9;
+  }
+  .title {
+    display: inline;
+  }
+  #t {
+    color: #fae060;
+    box-shadow: 0px 4px 0px #fa6096;
+  }
+  #r {
+    color: #9760fa;
+    position: relative;
+    top: 6px;
+    box-shadow: 0px 8px 0px #4ada45;
+  }
+  #i {
+    color: #6a43af;
+    box-shadow: 0px 12px 0px #60adfa;
+  }
+  #v {
+    color: #60adfa;
+    position: relative;
+    top: 6px;
+    box-shadow: 0px 16px 0px #6a43af;
+  }
+  #y {
+    color: #4ada45;
+    box-shadow: 0px 20px 0px #9760fa;
+  }
+  #a {
+    color: #fa6096;
+    position: relative;
+    top: 6px;
+    box-shadow: 0px 24px 0px #fae060;
+  }
+  .sec1 {
+    margin-bottom: 30px;
+  }
+  #my-canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+  }
+  .sec2 {
+    padding-bottom: 20px;
+  }
+  #incorrect {
+    font-family: "Archivo Black", sans-serif;
+    color: #ff3e3e;
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  #correct {
+    font-family: "Archivo Black", sans-serif;
+    color: #4ada45;
+    font-size: 20px;
+  }
+  h3 {
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: "Archivo Black", sans-serif;
+    color: #fae060;
+    font-size: 26px;
+  }
+  
+  p {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: white;
+  }
+  
+  #go {
+    font-family: "Archivo Black", sans-serif;
+    margin-top: 20px;
+  
+    background-color: #60adfa;
+    font-size: x-large;
+    color: black;
+  }
+  #cat {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 18px;
+    padding-top: 25px;
+    color: white;
+  }
+  
+  #skip {
+    font-family: "Archivo Black", sans-serif;
+    margin-top: 20px;
+  
+    background-color: #9760fa;
+    font-size: large;
+    color: black;
+  }
+  
+  #start {
+    font-family: "Archivo Black", sans-serif;
+    margin-top: 20px;
+    background-color: #4ada45;
+    font-size: xx-large;
+    color: black;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  #tagMessage {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: "Quattrocento Sans", sans-serif;
+    font-size: 20px;
+    color: white;
+  }
+  
+  input {
+    border-size: large;
+  }
+  
+  #dot {
+    height: 25px;
+    width: 25px;
+    background: #4ada45;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+  }

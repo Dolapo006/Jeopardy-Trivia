@@ -1,6 +1,6 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-import Answer from "../components/Answer";
+import { Routes } from "react-router-dom";
+import Answer from "./Answer";
 
 function Question({
   inc,
@@ -13,7 +13,7 @@ function Question({
   removeDot,
   displayQ
 }) {
-  // Title case function
+ 
   const titleCase = (s) => {
     if (typeof s !== "undefined") {
       return s
@@ -24,7 +24,7 @@ function Question({
         })
         .join(" ");
     } else {
-      return <Redirect to="#" />;
+      return <Routes to="/" />;
     }
   };
 

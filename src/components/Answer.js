@@ -1,6 +1,6 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-import Counter from "../components/Counter";
+import { Routes } from "react-router-dom";
+import Counter from "./Counter";
 
 function Answer({
   inc,
@@ -14,10 +14,10 @@ function Answer({
 }) {
   
   if (redir === true) {
-    return <Redirect to="/leaderboard" />;
+    return <Routes to="/leaderboard" />;
   }
 
-  // Function to set button red after incorrect answer
+  
   const colorR = () => {
     return <div id="incorrect">INCORRECT!</div>;
   };
